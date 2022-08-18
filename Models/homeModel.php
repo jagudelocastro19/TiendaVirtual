@@ -35,5 +35,24 @@
             $request = $this->update($sql,$arrData);
             return $request;
         }
+        /*====================================
+        Ver la lista de usuarios completa
+        ===================================*/
+        public function getUsers()
+        {
+            $sql = "SELECT * FROM usuario";
+            $request = $this->select_all($sql);
+            return $request;
+        }
+        
+        /*=================================
+        Eliminar usuario
+        =================================*/
+        public function delUser($id)
+        {
+            $sql="DELETE FROM usuario WHERE id = $id";
+            $request = $this->delete($sql);
+            return $request;
+        }
     }
 ?>

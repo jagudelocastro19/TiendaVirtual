@@ -18,6 +18,7 @@
         public function insertar()
         {
             $data = $this->model->setUser("Carlos",18);
+            $data = $this->model->setUser("Alex",17);
             print_r($data);
         }
         public function verusuario($id)
@@ -28,6 +29,16 @@
         public function actualizar()
         {
             $data = $this->model->updateUser(1,"Roberto",20);
+            print_r($data);
+        }
+        public function verusuarios()
+        {
+            $data = $this->model->getUsers();
+            print_r($data);
+        }
+        public function eliminarUsuario($id)
+        {
+            $data = $this->model->delUser($id);
             print_r($data);
         }
 

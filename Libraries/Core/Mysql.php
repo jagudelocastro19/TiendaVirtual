@@ -51,6 +51,7 @@
             $result = $this->conexion->prepare($this->strquery);
             $result->execute();
             $data = $result->fetchall(PDO::FETCH_ASSOC);
+            return $data;
         }
 
         /*====================================
@@ -72,8 +73,8 @@
         {
             $this->strquery = $query;
             $result = $this->conexion->prepare($this->strquery);
-            $result->execute();
-            return $result;
+            $del = $result->execute();
+            return $del;
         }
     }
 
