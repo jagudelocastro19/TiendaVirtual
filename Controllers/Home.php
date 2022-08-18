@@ -7,18 +7,29 @@
 
         public function home($parems)
         {
-            //echo "Mensaje desde el controlador";
+            $data['page_id'] = 1;
+            $data['tag_page'] = "Home";
+            $data['page_title'] = "Página principal";
+            $data['page_name'] = "home";
+            $data['page_content'] = "Qui sunt est nostrud aute dolore Lorem ut aliquip eiusmod est nulla ad.";
+            $this->views->getView($this,"home",$data);
         }
 
-        public function datos($params)
+        public function insertar()
         {
-            echo "Datos recibidos: ".$params;
+            $data = $this->model->setUser("Carlos",18);
+            print_r($data);
+        }
+        public function verusuario($id)
+        {
+            $data = $this->model->getUser($id);
+            print_r($data);
+        }
+        public function actualizar()
+        {
+            $data = $this->model->updateUser(1,"Roberto",20);
+            print_r($data);
         }
 
-        public function carrito($params)
-        {
-            $carrito = $this->model->getCarrito($params);
-            echo $carrito;
-        }
     }
 ?>
