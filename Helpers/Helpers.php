@@ -7,6 +7,13 @@ function base_url()
 {
     return BASE_URL;
 }
+/*=============================
+Retorna la URL DE Assets
+=============================*/
+function media()
+{
+    return BASE_URL."/Assets";
+}
 /*===============================
 Muestra información formateada
 ===============================*/
@@ -14,7 +21,7 @@ function dep($data)
 {
     $form = print_r('<pre>');
     $form .= print_r($data);
-    $form .= print_r($data);
+    $form .= print_r('</pre>');
     return $form;
 }
 /*======================================
