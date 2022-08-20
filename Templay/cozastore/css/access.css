@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container__access {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.container__access::before {
+  content: "";
+  position: absolute;
+  width: 2000px;
+  height: 2000px;
+  border-radius: 50%;
+  background: linear-gradient(-45deg, #717fe0, #d66693);
+  top: 6%;
+  right: 48%;
+  transform: translateY(-50%);
+  z-index: 1;
+  transition: 1.8s ease-in-out;
+}
+
+.signin-signup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-162px, -32px);
+  transition: transform 1s ease-in-out;
+}
+
+form {
+  text-align: center;
+}
+
+.signup {
+  /* display: none; */
+  visibility: hidden;
+  transition: .2s .7s ease-in-out;
+}
+
+.signin {
+  visibility: visible;
+  transition: .2s .7s ease-in-out;
+}
+
+.panel {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  top: 0;
+  height: 100vh;
+  margin: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.panel div {
+  margin-bottom: 20px;
+}
+/*
+  panel signin
+*/
+.panel-signin {
+  transform: translate(10px, 10px);
+  transition: all 2s ease-in-out;
+}
+
+.panel-signin img {
+  width: 50rem;
+}
+
+/* para la animacion*/
+/* .panel-signup {
+  right: 20px;
+  left: 615px;
+} */
+
+.panel-signup {
+  transform: translateX(200vw);
+  opacity: 0;
+  right: 10px;
+  transition: all 2s ease-in-out;
+}
+
+.panel-signup img {
+  width: 50rem;
+}
+
+/*
+  animations click on btn
+*/
+.container__access.signup-show::before {
+  transform: translate(100%, -50%);
+  right: 52%;
+}
+
+.container__access.signup-show .signin-signup {
+  transform: translate(-653px, -32px);
+}
+
+.container__access.signup-show .signup {
+  visibility: visible;
+}
+
+.container__access.signup-show .signin {
+  visibility: hidden;
+}
+
+.container__access.signup-show .panel-signin {
+  transform: translateX(-100vw);
+  opacity: 0;
+}
+
+.container__access.signup-show .panel-signup {
+  transform: translateX(0);
+  opacity: 1;
+}
