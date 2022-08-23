@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container__access {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.container__access::before {
+  content: "";
+  position: absolute;
+  width: 2000px;
+  height: 2000px;
+  border-radius: 50%;
+  background: linear-gradient(-45deg, #717fe0, #384285);
+  top: 6%;
+  right: 48%;
+  transform: translateY(-50%);
+  z-index: 1;
+  transition: 1.8s ease-in-out;
+}
+
+.signin-signup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0, -50%);
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr;
+  transition: 1s 0.7s ease-in-out;
+}
+
+.signin,
+.signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 5rem;
+  overflow: hidden;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  background: #fff;
+}
+
+form img {
+  width: 21px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.signup {
+  z-index: 0;
+  opacity: 0;
+  transition: 0.2s 0.7s ease-in-out;
+}
+
+.signin {
+  z-index: 1;
+  opacity: 1;
+  transition: 0.2s 0.7s ease-in-out;
+}
+
+.panel {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  top: 0;
+  height: 100vh;
+  margin: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.panel div {
+  margin-bottom: 20px;
+}
+
+.panel div h1 {
+  font-family: Poppins-Bold;
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+.panel .toggle-btn {
+  padding: 5px 15px;
+}
+
+/*
+  panel signin
+*/
+.panel-signin {
+  transform: translate(10px, 10px);
+  transition: all 2s ease-in-out;
+}
+
+.panel-signin img {
+  transform: translate(10px, 10px);
+  transition: all 1.5s ease-in-out;
+  width: 50rem;
+}
+
+/*
+  panel signup
+*/
+.panel-signup {
+  transform: translateX(200vw);
+  opacity: 0;
+  right: 10px;
+  transition: all 2s ease-in-out;
+}
+
+.panel-signup img {
+  transform: translateX(200vw);
+  transition: all 1.5s ease-in-out;
+  width: 50rem;
+}
+
+/*
+  animations click on btn
+*/
+.container__access.signup-show::before {
+  transform: translate(100%, -50%);
+  right: 52%;
+}
+
+.container__access.signup-show .signin-signup {
+  left: 0%;
+}
+
+.container__access.signup-show .signup {
+  z-index: 1;
+  opacity: 1;
+}
+
+.container__access.signup-show .signin {
+  z-index: 0;
+  opacity: 0;
+}
+
+.container__access.signup-show .panel-signin img {
+  transform: translateX(-100vw);
+}
+
+.container__access.signup-show .panel-signin {
+  transform: translateX(-100vw);
+  opacity: 0;
+}
+
+.container__access.signup-show .panel-signup {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.container__access.signup-show .panel-signup img {
+  transform: translateX(0);
+}
+
+@media (max-width: 1286px) {
+  .panel-signup img,
+  .panel-signin img {
+    width: 40rem;
+  }
+}
+
+@media (max-width: 1150px) {
+  .panel-signup img,
+  .panel-signin img {
+    width: 35rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .container {
+    height: 100vh;
+  }
+  .container__access::before {
+    width: 1500px;
+    height: 1500px;
+    left: 50%;
+    bottom: 68%;
+    transform: translateX(-50%);
+    right: initial;
+    top: initial;
+    transition: all 2s ease-in-out;
+  }
+
+  .signin-signup {
+    width: 100%;
+    left: 0;
+    transform: translate(0, -10%);
+  }
+
+  .signin-signup form {
+    padding: 0;
+  }
+
+  .panel {
+    width: 100%;
+    bottom: auto;
+    height: auto;
+    margin: 0;
+  }
+
+  .panel img {
+    display: none;
+  }
+
+  .panel-signin {
+    transform: translateY(10px);
+  }
+
+  .panel-signup {
+    transform: translateY(100vh);
+  }
+
+  .container__access.signup-show .signin-signup {
+    top: 10%;
+  }
+
+  .container__access.signup-show .panel-signin {
+    transform: translateY(-100vh);
+  }
+
+  .container__access.signup-show .panel-signup {
+    transform: translateY(80vh);
+  }
+
+  .container__access.signup-show::before {
+    transform: translate(-50%, 100%);
+    bottom: 35%;
+  }
+}
+
+@media (max-width: 450px) {
+  .container__access.signup-show .panel-signup {
+    transform: translateY(70vh);
+  }
+}
