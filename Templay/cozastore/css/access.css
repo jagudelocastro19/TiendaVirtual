@@ -115,7 +115,7 @@ form img {
   transform: translateX(200vw);
   opacity: 0;
   right: 10px;
-  transition: transform 2s ease-in-out;
+  transition: all 2s ease-in-out;
 }
 
 .panel-signup img {
