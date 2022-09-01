@@ -27,7 +27,13 @@
                     $arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
                 }
 
-                $arrData[$i]['options'] = "";
+                $arrData[$i]['options'] = '<div class="text-center">
+                <button class="btn btn-secondary btn-sm btnpermisosRol" rl="'.$arrData[$i]['idrol'].'" title="Permisos"><i class="fas fa-key"></i></button>
+                <button class="btn btn-primary btn-sm btnEditRol" rl="'.$arrData[$i]['idrol'].'" title="Editar"><i class="fas fa-pencil-alt"></i></button>
+                <button class="btn btn-danger btn-sm btnDelRol" rl="'.$arrData[$i]['idrol'].'" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
+                
+                
+                </div>';
             }
 
             echo json_encode($arrData,JSON_UNESCAPED_UNICODE);
