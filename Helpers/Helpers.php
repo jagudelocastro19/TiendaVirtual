@@ -37,6 +37,14 @@ function dep($data)
     $form .= print_r('</pre>');
     return $form;
 }
+/*====================================
+Llama el formulario Roles del Dashboar
+=====================================*/
+function getModal(string $nameModal, $data)
+{
+    $view_modal = "Views/Template/Modals/{$nameModal}.php";
+    require_once $view_modal;
+}
 /*======================================
 Eliminar exceso de espacio entre palabras
 ========================================*/

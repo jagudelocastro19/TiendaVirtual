@@ -18,3 +18,14 @@
 .app-sidebar__toggle::before{
     display: none;
 }
+
+.app-nav__item{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15pt;
+}
