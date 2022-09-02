@@ -40,5 +40,9 @@
             die();
         }
 
+            public function setRol(){
+                dep($_POST);
+            }
+
     }
 ?>
