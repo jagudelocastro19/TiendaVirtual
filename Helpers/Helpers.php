@@ -12,7 +12,7 @@ Retorna la URL DE Assets
 =============================*/
 function media()
 {
-    return BASE_URL."/Assets";
+    return BASE_URL."Assets";
 }
 /*==============================
 Funciones para concatenar los templay dashboard

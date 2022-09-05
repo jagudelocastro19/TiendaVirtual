@@ -2,7 +2,7 @@
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="<?= media();?>/images/avatar.png" alt="User Image">
+      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="<?= media();?>/images/mujer-de-negocios.png" alt="User Image">
         <div>
           <p class="app-sidebar__user-name">Abel OSH</p>
           <p class="app-sidebar__user-designation">Administrador</p>
